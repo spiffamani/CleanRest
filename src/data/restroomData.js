@@ -113,11 +113,10 @@ const restrooms = [
   }
 ];
 
-// User location (simulated - in real app this comes from GPS)
+// User location 
 const userLocation = {
   lat: 6.5244,
   lng: 3.3792
 };
 
-// Export the data so other files can use it
 export { restrooms, userLocation };
