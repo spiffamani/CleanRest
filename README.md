@@ -1,16 +1,67 @@
-# React + Vite
+# CleanRest 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time restroom finder web app that helps users locate clean,
+available public restrooms across Lagos.
 
-Currently, two official plugins are available:
+## Problem Statement
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Finding a clean, functional public restroom in a busy city like Lagos
+is a daily frustration. CleanRest solves this by providing live
+availability, cleanliness scores, and a pay-per-use QR payment system
+— all in one place.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Three role-based views** — User, Cleaner, and Admin
+- **Live status indicators** — Available, Occupied, No Water, Needs Cleaning
+- **Distance calculation** — Haversine formula calculates real GPS distance
+- **QR payment simulation** — Pay-per-use flow with processing simulation
+- **Cleaner dashboard** — Priority task list for restrooms below 75% cleanliness
+- **Admin CRUD panel** — Add, edit, delete restrooms with live stats
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React 19, Vite
+- **State Management:** React useState hooks
+- **Styling:** CSS (component-scoped)
+- **Data Layer:** Structured dummy data simulating IoT sensor input
+- **Deployment:** Vercel
+
+## Project Structure
+
+src/
+├── App.jsx                  # Root component, manages role-based view switching
+├── components/
+│   ├── UserView.jsx         # Browse, filter, and pay for restrooms
+│   ├── CleanerView.jsx      # Cleaning task management with priority system
+│   ├── AdminView.jsx        # Full CRUD dashboard with live statistics
+│   └── RestroomCard.jsx     # Reusable card component for each restroom
+├── data/
+│   └── restroomData.js      # Dummy data simulating backend/sensor responses
+├── services/
+│   └── restroomService.js   # Business logic — distance, status, payments
+└── styles/                  # Component-scoped CSS files
+
+
+## Running Locally
+
+```bash
+git clone https://github.com/spiffamani/CleanRest.git
+cd CleanRest
+npm install
+npm run dev
+```
+
+Visit `http://localhost:5173`
+
+## Live Demo
+
+[cleanrest.vercel.app](https://cleanrest.vercel.app)
+
+## Roadmap
+
+- [ ] Java Spring Boot REST API backend
+- [ ] Real IoT sensor integration (ESP32)
+- [ ] Leaflet.js real map integration
+- [ ] User authentication
+- [ ] Real payment gateway (Paystack)
