@@ -65,7 +65,7 @@ function App() {
 
       {/* Footer */}
       <footer className="app-footer">
-        <p>© 2025 CleanRest - Clean, Affordable, Reliable Restrooms</p>
+        <p>© 2026 CleanRest - Clean, Affordable, Reliable Restrooms</p>
         <div className="footer-links">
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
