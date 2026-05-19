@@ -1,6 +1,13 @@
 // restroomData.js - Store all restroom information
 // This file contains the initial data for all restrooms
-
+// App-wide constants — single source of truth for thresholds
+export const CLEANLINESS_THRESHOLD = 75;      // Below this needs cleaning
+export const HIGH_PRIORITY_THRESHOLD = 65;    // Below this is high priority
+export const SENSOR_WATER_CHANCE = 0.85;      // 85% chance has water (ESP32 sim)
+export const SENSOR_OCCUPIED_CHANCE = 0.30;   // 30% chance occupied (ESP32 sim)
+export const PAYMENT_DELAY_MS = 2000;         // QR payment processing delay
+export const CLEANLINESS_DROP_PER_USE = 5;    // Cleanliness drops after each use
+export const MIN_CLEANLINESS = 60;            // Cleanliness never drops below this
 const restrooms = [
   {
     id: 1,
